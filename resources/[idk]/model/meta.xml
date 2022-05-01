@@ -1,0 +1,6 @@
+<meta>
+    <script src='client.lua' type='client' />
+
+    <file src='flatbed.dff' />
+    <file src='flatbed.txd' />
+</meta>

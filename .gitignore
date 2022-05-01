@@ -1,0 +1,8 @@
+/*
+
+!.gitignore
+!acl.xml
+!mtaserver.conf
+!resources
+
+/**/avCore/server/database.lua

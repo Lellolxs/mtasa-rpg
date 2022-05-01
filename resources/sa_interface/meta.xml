@@ -1,0 +1,11 @@
+<meta>
+    <!-- Client -->
+        <script src='client/main.lua' type='client' />
+        <script src='client/edit.lua' type='client' />
+        <script src='client/settings.lua' type='client' />
+        <script src='client/utils.lua' type='client' />
+
+        <!-- Exports -->
+            <export function="mount" type="client" />
+            <export function="getInterfaceElementOptionValue" type="client" />
+</meta>

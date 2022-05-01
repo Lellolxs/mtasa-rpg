@@ -1,0 +1,94 @@
+<meta>
+    <min_mta_version server="1.5.0-9.07439" />
+
+    <!-- Shared -->
+        <script src="shared/main.lua" type="shared" />
+        <script src="shared/players.lua" type="shared" />
+        <script src="shared/output.lua" type="shared" />
+
+        <!-- Helpers -->
+            <script src="shared/helpers/player.lua" type="shared" />
+            <script src="shared/helpers/vehicle.lua" type="shared" />
+            <script src="shared/helpers/vector.lua" type="shared" />
+            <script src="shared/helpers/name.lua" type="shared" />
+
+        <!-- Exports -->
+            <export function="findPlayer" type="shared" />
+            <export function="getServerPrefix" type="shared" />
+            <export function="getColors" type="shared" />
+            <export function="getColor" type="shared" />
+            <export function="getServerProperty" type="shared" />
+            <export function="findNearestVehicleToElement" type="shared" />
+            <export function="getRandomPositionAround" type="shared" />
+            <export function="generateName" type="shared" />
+            <export function="getPlayerLevel" type="shared" />
+
+    <!-- Server -->
+        <script src="server/main.lua" type="server" />
+        <script src="server/players.lua" type="server" />
+        <script src="server/components.lua" type="server" />
+        <script src="server/database.lua" type="server" />
+
+        <!-- Components -->
+            <script src="server/components/Async.lua" type="server" />
+
+        <!-- Exports -->
+            <export function="require" type="server" />
+            <export function="getDatabase" type="server" />
+
+    <!-- Client -->
+        <script src="client/main.lua" type="client" />
+
+        <script src="client/cursor.lua" type="client" />
+        <script src="client/camera.lua" type="client" />
+        <script src="client/sfx.lua" type="client" />
+        <script src="client/components.lua" type="client" />
+
+        <!-- Components -->
+            <script src="client/components/Fonts.lua" type="client" />
+            <script src="client/components/Rectangle.lua" type="client" />
+            <script src="client/components/Editbox.lua" type="client" />
+            <script src="client/components/Scrollbar.lua" type="client" />
+            <script src="client/components/Button.lua" type="client" />
+            <script src="client/components/Slider.lua" type="client" />
+            <script src="client/components/Select.lua" type="client" />
+            <script src="client/components/Textarea.lua" type="client" />
+            <script src="client/components/Switch.lua" type="client" />
+            <script src="client/components/Checkbox.lua" type="client" />
+            <script src="client/components/Async.lua" type="client" />
+
+        <!-- Exports -->
+            <export function="require" type="client" />
+            <export function="isCursorInArea" type="client" />
+            <export function="requireFont" type="client" />
+            <export function="playEffect" type="client" />
+            <export function="doCameraCinematic" type="client" />
+            <export function="disableCameraCinematic" type="client" />
+
+        <!-- Assets -->
+            <file src="client/assets/logo.png" />
+
+            <!-- Fonts -->
+                <file src="client/assets/fonts/fontawesome-solid.ttf" />
+                <file src="client/assets/fonts/fontawesome.otf" />
+                <file src="client/assets/fonts/OpenSans-Bold.ttf" />
+                <file src="client/assets/fonts/OpenSans-Light.ttf" />
+                <file src="client/assets/fonts/OpenSans-Regular.ttf" />
+                <file src="client/assets/fonts/lunabar.ttf" />
+
+                <file src="client/assets/fonts/Roboto-Black.ttf" />
+                <file src="client/assets/fonts/Roboto-BlackItalic.ttf" />
+                <file src="client/assets/fonts/Roboto-Bold.ttf" />
+                <file src="client/assets/fonts/Roboto-BoldItalic.ttf" />
+                <file src="client/assets/fonts/Roboto-Italic.ttf" />
+                <file src="client/assets/fonts/Roboto-Light.ttf" />
+                <file src="client/assets/fonts/Roboto-LightItalic.ttf" />
+                <file src="client/assets/fonts/Roboto-Medium.ttf" />
+                <file src="client/assets/fonts/Roboto-MediumItalic.ttf" />
+                <file src="client/assets/fonts/Roboto-Regular.ttf" />
+                <file src="client/assets/fonts/Roboto-Thin.ttf" />
+                <file src="client/assets/fonts/Roboto-ThinItalic.ttf" />
+
+            <!-- SFX -->
+                <file src="client/assets/sfx/click.mp3" />
+</meta>

@@ -1,0 +1,108 @@
+local Interface = exports.sa_interface;
+local screenX, screenY = guiGetScreenSize()
+
+function reMap(value, low1, high1, low2, high2)
+	return low2 + (value - low1) * (high2 - low2) / (high1 - low1)
+end
+
+responsiveMultipler = reMap(screenX, 1024, 1920, 0.75, 1)
+
+function resp(num)
+	return num * responsiveMultipler
+end
+
+function respc(num)
+	return math.ceil(num * responsiveMultipler)
+end
+
+local barW = respc(250)
+local barH = respc(12)
+
+local barX = (screenX - barW) / 2
+local barY = (screenY - barH) / 2
+
+local bordercolor = tocolor(0, 0, 0, 200)
+
+function drawBorder(x, y, sx, sy, margin, bordercolor)
+	bordercolor = bordercolor or tocolor(0, 0, 0, 200)
+
+	dxDrawRectangle(x, y, sx, margin, bordercolor) -- felső
+	dxDrawRectangle(x, y + sy - margin, sx, margin, bordercolor) -- alsó
+	dxDrawRectangle(x, y + margin, margin, sy - margin * 2, bordercolor) -- bal
+	dxDrawRectangle(x + sx - margin, y + margin, margin, sy - margin * 2, bordercolor) -- jobb
+end
+
+function dxDrawSegmentBar(startX, startY, width, height, backgroundColor, progressColor, currentValue, gapWidth, numOfSegments, postGUI, subPixelPositioning)
+    backgroundColor = backgroundColor or tocolor(0, 0, 0, 200)
+    progressColor = progressColor or tocolor(0, 150, 255)
+
+    currentValue = currentValue and math.min(100, currentValue) or 0
+    gapWidth = gapWidth or 5
+    numOfSegments = numOfSegments or 3
+
+    local widthWithGap = width - gapWidth * (numOfSegments - 1)
+    local oneSegmentWidth = widthWithGap / numOfSegments
+
+    local progressPerSegment = 100 / numOfSegments
+    local remainingProgress = currentValue % progressPerSegment
+
+    local segmentsFull = math.floor(currentValue / progressPerSegment)
+    local segmentsInUse = math.ceil(currentValue / progressPerSegment)
+
+    for i = 1, numOfSegments do
+        local segmentX = startX + (oneSegmentWidth + gapWidth) * (i - 1)
+
+        drawBorder(segmentX, startY, oneSegmentWidth, height, 2)
+
+        dxDrawRectangle(segmentX, startY, oneSegmentWidth, height, backgroundColor, postGUI, subPixelPositioning)
+
+        if i <= segmentsFull then
+            dxDrawRectangle(segmentX + respc(2), startY + respc(2), oneSegmentWidth - respc(4), height - respc(4), progressColor, postGUI, subPixelPositioning)
+        elseif i == segmentsInUse then
+            if remainingProgress > 0 then
+                dxDrawRectangle(segmentX, startY, oneSegmentWidth / progressPerSegment * remainingProgress, height, progressColor, postGUI, subPixelPositioning)
+            end
+        end
+    end
+end
+
+function dxDrawDoubleDataBar(x, y, w, h, backgroundColor, borderColor, firstDataColor, secondDataColor)
+	backgroundColor = backgroundColor or tocolor(0, 0, 0, 155)
+	borderColor = borderColor or tocolor(0, 0, 0, 200)
+
+	-- ** Első vonal
+
+	drawBorder(x, y, (w / 2) - respc(1), h, respc(2), borderColor)
+	dxDrawRectangle(x, y, (w / 2) - respc(1), h, backgroundColor)
+
+	dxDrawRectangle(x + respc(2), y + respc(2), (w / 2) - respc(1) - respc(4), h - respc(4), firstDataColor)
+
+	-- ** Második vonal
+
+	drawBorder(x + (w / 2) + respc(1), y, (w / 2) - respc(1), h, respc(2), borderColor)
+	dxDrawRectangle(x + (w / 2) + respc(1), y, (w / 2) - respc(1), h, backgroundColor)
+
+	dxDrawRectangle(x + (w / 2) + respc(1) + respc(2), y + respc(2), (w / 2) - respc(1) - respc(4), h - respc(4), secondDataColor)
+end
+
+addEventHandler("onClientRender", root,
+	function ()
+		--dxDrawSegmentBar(barX, barY, barW, barH, tocolor(0, 0, 0, 155), tocolor(124, 197, 118, 200), 100, 2, 2)
+		--dxDrawSegmentBar(barX, barY + respc(14), barW, barH, tocolor(0, 0, 0, 155), tocolor(50, 179, 239, 200), 100, 2, 2)
+		--dxDrawSegmentBar(barX, barY + (respc(14)) * 2, barW, barH, tocolor(0, 0, 0, 155), tocolor(223, 181, 81, 200), 100, 2, 2)
+		--dxDrawSegmentBar(barX, barY + (respc(14)) * 3, barW, barH, tocolor(0, 0, 0, 155), tocolor(97, 226, 252, 200), 100, 2, 2)
+		--dxDrawSegmentBar(barX, barY + (respc(14)) * 4, barW, barH, tocolor(0, 0, 0, 155), tocolor(200, 200, 200, 200), 100, 2, 3)
+
+		dxDrawDoubleDataBar(barX, barY, barW, barH, tocolor(0, 0, 0, 155), tocolor(0, 0, 0, 200), tocolor(182, 85, 85, 200), tocolor(50, 179, 239, 200))
+		dxDrawDoubleDataBar(barX, barY + respc(19), barW, barH, tocolor(0, 0, 0, 155), tocolor(0, 0, 0, 200), tocolor(101, 162, 187, 200), tocolor(226, 149, 6, 200))
+		dxDrawSegmentBar(barX, barY + (respc(19)) * 2, barW, barH, tocolor(0, 0, 0, 155), tocolor(200, 200, 200, 200), 100, 2, 3)
+	end
+)
+
+addEventHandler('onInterfaceUpdate', root, function(id, position, size)
+	if (id == 'hud') then 
+		barX, barY = position.x, position.y;
+	end 
+end);
+
+Interface:mount('hud', { label = "HUD", position = Vector2(barX, barY), size = Vector2(barW, barH) });

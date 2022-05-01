@@ -1,0 +1,23 @@
+<meta>
+    <!-- <include resource="avInfo" />
+    <include resource="object_preview" /> -->
+
+    <script src='_config.lua' type='shared' />
+
+    <!-- Server -->
+        <script src='server/main.lua' type='server' />
+        <script src='server/utils.lua' type='server' />
+    
+    <!-- Client -->
+        <script src='client/main.lua' type='client' />
+        
+        <!-- Components -->
+            <script src='client/components/background.lua' type='client' />
+            <script src='client/components/login.lua' type='client' />
+            <script src='client/components/register.lua' type='client' />
+            <script src='client/components/charcreator.lua' type='client' />
+            <script src='client/components/ban.lua' type='client' />
+
+        <!-- Assets -->
+            <file src='client/assets/music.mp3' />
+</meta>

@@ -1,0 +1,33 @@
+<meta>
+    <script src='shared/main.lua' type='shared' />
+
+    <!-- Server -->
+        <script src='server/config.lua' type='server' />
+        <script src='server/main.lua' type='server' />
+        <script src='server/faction.lua' type='server' />
+
+        <!-- Classes -->
+            <script src='server/classes/faction.lua' type='server' />
+
+    <!-- Client -->
+        <script src='client/config.lua' type='client' />
+        <script src='client/main.lua' type='client' />
+        <script src='client/settings.lua' type='client' />
+        <script src='client/utils.lua' type='client' />
+
+        <script src='client/crosshair.lua' type='client' />
+        
+        <!-- Components -->
+            <script src='client/components/navbar.lua' type='client' />
+
+        <!-- Pages -->
+            <script src='client/pages/home.lua' type='client' />
+            <script src='client/pages/premium.lua' type='client' />
+            <script src='client/pages/factions.lua' type='client' />
+            <script src='client/pages/property.lua' type='client' />
+            <script src='client/pages/settings.lua' type='client' />
+            <script src='client/pages/admins.lua' type='client' />
+
+        <!-- Exports -->
+            <export function="getSettingValue" type='client' />
+</meta>

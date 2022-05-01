@@ -1,0 +1,19 @@
+<meta>
+    <!-- <include resource="avCore" />
+    <include resource="avAdmin" />
+    <include resource="avInventory" /> -->
+
+    <!-- Server -->
+        <!-- Sources --> 
+            <script src='server/main.lua' type='server' />
+            <script src='server/commands.lua' type='server' />
+
+    <!-- Client -->
+        <!-- Sources -->
+            <script src='client/main.lua' type='client' />
+
+        <!-- Assets -->
+
+            <file src='client/assets/shaders/blackandwhite.fx' />
+            <file src='client/assets/music.mp3' />
+</meta>

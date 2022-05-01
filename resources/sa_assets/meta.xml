@@ -1,0 +1,55 @@
+<meta>
+
+	<!-- Scripts -->
+
+	<script src="sourceS.lua" type="server" />
+
+	<!-- Shader -->
+
+	<file src="files/shaders/glitch.cso" />
+
+	<!-- Image -->
+
+	<file src="files/images/logo.png" />
+	<file src="files/images/left.png" />
+	<file src="files/images/top.png" />
+	<file src="files/images/right.png" />
+	<file src="files/images/middle.png" />
+	<file src="files/images/round.png" />
+	<file src="files/images/notify.png" />
+
+	<!-- Sounds -->
+
+	<file src="files/sounds/notify.wav" />
+
+	<file src="files/sounds/card.mp3" />
+	<file src="files/sounds/copy.mp3" />
+	<file src="files/sounds/crafting.mp3" />
+	<file src="files/sounds/craftstart.mp3" />
+	<file src="files/sounds/dice.mp3" />
+	<file src="files/sounds/hover.mp3" />
+	<file src="files/sounds/move.mp3" />
+	<file src="files/sounds/select.mp3" />
+	<file src="files/sounds/tab.mp3" />
+
+	<!-- Fonts -->
+
+	<file src="files/fonts/houseScript.ttf" /> <!-- houseScript.ttf -->
+	<file src="files/fonts/RobotoB.ttf" /> <!-- RobotoB.ttf -->
+	<file src="files/fonts/RobotoL.ttf" /> <!-- RobotoL.ttf -->
+	<file src="files/fonts/Roboto.ttf" /> <!-- Roboto.ttf -->
+	<file src="files/fonts/iconFont.ttf" /> <!-- iconFont.ttf -->
+	<file src="files/fonts/Road_Rage.otf" /> <!-- roadRage.otf -->
+	<file src="files/fonts/Fixedsys500c.ttf" /> <!-- Fixedsys500c.ttf -->
+	<file src="files/fonts/gtaFont.ttf" /> <!-- gtaFont -->
+	<file src="files/fonts/hand.ttf" /> <!-- hand.ttf -->
+	<file src="files/fonts/lunabar.ttf" /> <!-- lunabar.ttf -->
+	<file src="files/fonts/myriadpro.ttf" /> <!-- myriadpro.ttf -->
+	<file src="files/fonts/Russo.ttf" /> <!-- Russo.ttf -->
+	<file src="files/fonts/ScoutCond-RegularItalic.otf" /> <!-- ScoutCond-RegularItalic.otf -->
+
+	<!-- Export functions -->
+
+	<export function="findPlayer" type="server" />
+
+</meta>

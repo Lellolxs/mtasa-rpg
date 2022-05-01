@@ -1,0 +1,46 @@
+-- Ne ezt modositsd...
+local allowedSerials = {
+    -- { name: string, serial: string, admin: boolean }
+};
+
+-- 929.5615234375, -1104.7138671875, 84.181518554688
+
+addCommandHandler(
+    'addserial', 
+    function(player, cmd, serial)
+
+    end
+);
+
+addEventHandler(
+    "onPlayerConnect", 
+    root, 
+    function(_, address, _, serial)
+        if (not allowedSerials[serial]) then 
+            return cancelEvent('csa megy meg a fejlesztes 8)');
+        end 
+    end
+);
+
+addEventHandler(
+    'onResourceStart', 
+    resourceRoot, 
+    function()
+        local xml = xmlLoadFile(':sSerial/serials.xml', 'serials');
+
+        if (not xml) then 
+            print('nincs, letrehozas')
+            xml = xmlCreateFile(':sSerial/serials.xml', 'serials');
+            xmlSaveFile(xml);
+        end 
+
+        local rootNode = xmlFindSubNode(xml, 'serials', 0);
+
+        iprint(xml, rootNode)
+
+        -- local attributes = xmlNodeGetAttributes(xml);
+        -- for k,v in pairs(attributes) do 
+        --     iprint(k, v);
+        -- end 
+    end
+);

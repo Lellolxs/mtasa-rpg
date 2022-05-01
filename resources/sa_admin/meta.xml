@@ -1,0 +1,57 @@
+<meta>
+    <min_mta_version server="1.5.2" />
+    
+    <script src="shared/main.lua" type="shared" />
+    
+    <script src="server/main.lua" type="server" />
+    <script src="server/commands.lua" type="server" />
+    <script src="server/exports.lua" type="server" />
+    <script src="server/log.lua" type="server" />
+    <script src="server/recon.lua" type="server" />
+    <script src="server/utils.lua" type="server" />
+    
+    <script src="client/main.lua" type="client" />
+    <script src="client/events.lua" type="client" />
+    <script src="client/utils.lua" type="client" />
+    
+    <!-- Server -->
+    <script src="server/commands/general.lua" type="server" />
+    <script src="server/commands/player.lua" type="server" />
+    <script src="server/commands/vehicle.lua" type="server" />
+    <script src="server/commands/developer.lua" type="server" />
+    
+    <script src="server/events/message.lua" type="server" />
+    
+    <!-- Client -->
+    <!-- Fly -->
+    <script src="client/funcs/fly.lua" type="client" />
+    
+    <!-- Command list -->
+    <script src="client/commands.lua" type="client" />
+    
+    <!-- Admin messages -->
+    <script src="client/messages.lua" type="client" />
+    
+    <script src="client/messages/actions.lua" type="client" />
+    <script src="client/messages/conversation.lua" type="client" />
+    <script src="client/messages/header.lua" type="client" />
+    <script src="client/messages/list.lua" type="client" />
+    <script src="client/messages/prompt.lua" type="client" />
+    
+    <!-- Exports -->
+    <!-- Shared -->
+    <export function="getPlayerAdminLevel" type="shared" />
+    <export function="getPlayerAdminName" type="shared" />
+    <export function="getPlayerAdminTitle" type="shared" />
+    <export function="getAdminLevelLabel" type="shared" />
+    <export function="getPlayerAdminColor" type="shared" />
+    <export function="getAdminLevelColor" type="shared" />
+    <export function="isAdminInDuty" type="shared" />
+    
+    <!-- Server -->
+    <export function="Command" type="server" />
+    <export function="outputToAdmins" type="server" />
+    <export function="addAdminLog" type="server" />
+    
+    <!-- <script src='server/commands/*.lua' type='server' /> -->
+</meta>

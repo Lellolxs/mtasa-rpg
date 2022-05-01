@@ -1,0 +1,120 @@
+local Core = exports.sa_core;
+
+loadstring(Core:require({ "Rectangle" }))();
+
+local screenX, screenY = guiGetScreenSize()
+
+local scoreboardW = 499
+local scoreboardH = 600
+
+local scoreboardX = (screenX - scoreboardW) / 2
+local scoreboardY = (screenY - scoreboardH) / 2
+
+local onlinePlayers = {}
+
+local scrollOffset = 0
+
+local fadeStart = false
+local fadeEnd = false
+
+local fadeAmount = 0
+
+local titleFont = dxCreateFont(":sa_assets/files/fonts/RobotoB.ttf", 18, false, "antialiased")
+local onlineFont = dxCreateFont(":sa_assets/files/fonts/RobotoB.ttf", 13, false, "antialiased")
+
+local roundtexture = dxCreateTexture(":sa_assets/files/images/round.png", "argb", true, "clamp")
+
+-- function dxDrawRoundedRectangle(x, y, sx, sy, color, postGUI, subPixelPositioning)
+	-- dxDrawImage(x, y, 5, 5, roundtexture, 0, 0, 0, color, postGUI)
+	-- dxDrawRectangle(x, y + 5, 5, sy - 5 * 2, color, postGUI, subPixelPositioning)
+	-- dxDrawImage(x, y + sy - 5, 5, 5, roundtexture, 270, 0, 0, color, postGUI)
+	-- dxDrawRectangle(x + 5, y, sx - 5 * 2, sy, color, postGUI, subPixelPositioning)
+	-- dxDrawImage(x + sx - 5, y, 5, 5, roundtexture, 90, 0, 0, color, postGUI)
+	-- dxDrawRectangle(x + sx - 5, y + 5, 5, sy - 5 * 2, color, postGUI, subPixelPositioning)
+	-- dxDrawImage(x + sx - 5, y + sy - 5, 5, 5, roundtexture, 180, 0, 0, color, postGUI)
+-- end
+
+addEventHandler("onClientKey", root,
+	function (key, press)
+		-- print("asd")
+
+		if fadeStart or fadeEnd then
+			if key == "mouse_wheel_up" then
+				if scrollOffset > 0 then
+					scrollOffset = scrollOffset - 1
+				end
+			end
+
+			if key == "mouse_wheel_down" then
+				if scrollOffset < #onlinePlayers - 17 then
+					scrollOffset = scrollOffset + 1
+				end
+			end
+		end
+
+		if key == "tab" and not press then
+			local loggedIn = getElementData(localPlayer, "loggedIn") or false
+
+			if loggedIn then
+				fadeStart = false
+				fadeEnd = getTickCount()
+
+				fadeAmount = 1
+			end
+		end
+
+		if key == "tab" and press then
+			local loggedIn = getElementData(localPlayer, "loggedIn") or false
+
+			if loggedIn then
+				onlinePlayers = {}
+
+				fadeStart = getTickCount()
+				fadeEnd = false
+
+				onlinePlayers[1] = {
+					localPlayer,
+					getElementData(localPlayer, "visibleName"):gsub("_", " "),
+					getElementData(localPlayer, "playerID")
+				}
+
+				local data = {}
+				local players = getElementsByType("player")
+				local lastPlayer = localPlayer
+
+				for i = 1, #players do
+					local player = players[i]
+
+					if player ~= localPlayer and isElement(player) then
+						local playerID = getElementData(player, "playerID") or 0
+						local loggedIn = getElementData(player, "loggedIn") or false
+
+						if loggedIn then
+							data[playerID] = {
+								player,
+								getElementData(player, "visibleName"):gsub("_", " "),
+								playerID
+							}
+						else
+							data[playerID] = {
+								player,
+								"#949494" .. getPlayerName(player):gsub("_", " "),
+								playerID
+							}
+						end
+
+						lastPlayer = player
+					end
+				end
+
+				local lastPlayerId = getElementData(lastPlayer, "playerID") or 0
+
+				for i = 1, lastPlayerId do
+					if data[i] then
+						table.insert(onlinePlayers, data[i])
+					end
+				end
+			end
+		end
+	end
+)

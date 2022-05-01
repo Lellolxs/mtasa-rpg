@@ -1,0 +1,13 @@
+<meta>
+	
+	<!-- Scripts -->
+
+	<script src="sourceC.lua" type="client" cache="false" />
+	<script src="sourceS.lua" type="server" />
+
+	<!-- Export functions -->
+
+	<export function="showNotification" type="client" />
+	<export function="showNotification" type="server" />
+
+</meta>

@@ -24,7 +24,7 @@ addEventHandler(
     root, 
     function(nick, address, _, serial)
         if (not allowedSerials[serial]) then 
-            cancelEvent(true, 'A szerver jelenleg fejlesztés alatt áll.\n\nDiscord: dc.sa-stories.com');
+            cancelEvent(true, 'csa helo who.ru? ask me for whitelist if i know you. szkiddaj#9391');
             return outputChatBox(
                 Core:getServerPrefix("error", "Whitelist") .. nick .. " megpróbált csatlakozni a szerverhez, de nincs hozzáadva a whitelisthez.", 
                 root, 255, 255, 255, true
@@ -52,7 +52,7 @@ addEventHandler(
         for _, player in ipairs(getElementsByType('player')) do 
             if (not allowedSerials[getPlayerSerial(player)]) then 
                 local playerName = getPlayerName(player);
-                kickPlayer(player, 'Rendszer', 'A szerver jelenleg fejlesztés alatt áll.\n\nDiscord: dc.sa-stories.com');
+                kickPlayer(player, 'Szerver', 'csa helo who.ru? ask me for whitelist if i know you. szkiddaj#9391');
                 outputChatBox(
                     Core:getServerPrefix("error", "Whitelist") .. playerName .. " a szerveren tartózkodott, de mivel nem volt hozzáadva a whitelisthez kickelve lett.", 
                     root, 255, 255, 255, true

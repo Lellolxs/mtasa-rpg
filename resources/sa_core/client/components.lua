@@ -74,6 +74,7 @@ local default_str = [[
         find=function(a,b)for c=1,#a do if b(a[c],c)then return a[c]end end;return false end,
         find_keytbl=function(a,b)for c,d in pairs(a)do if b(d,c)then return d end end;return false end,
         map=function(a,b)local c={}for d=1,#a do c[d]=b(a[d],d,a)end;return c end, 
+        map_keytbl=function(a,b)local c={}for k,v in pairs(a) do c[k]=b(v,k,a)end;return c end, 
         filter=function(a,b)local c={}for d=1,#a do if b(a[d],d)then table.insert(c,a[d])end end;return c end, 
         filter_keytbl=function(a,b)local c={}for d,e in pairs(a)do if b(e,d)then c[d]=e end end;return c end, 
         copy=function(a)local b={}for c,d in pairs(a)do b[c]=d end;return b end, 

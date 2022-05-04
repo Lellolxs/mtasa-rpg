@@ -21,8 +21,6 @@
         <acl name="Admin"></acl>
         <acl name="RPC"></acl>
         <object name="resource.*"></object>
-        <object name="resource.admin"></object>
-        <object name="resource.webadmin"></object>
         <object name="user.*"></object>
     </group>
     <group name="Console">

@@ -45,4 +45,23 @@ function createTemporaryVehicle(player, model)
         warpPedIntoVehicle(player, vehicle);
     end 
 end 
-Command("tempveh",{description="létrehoz egy ideiglenes járművet melléd.",required={admin=12},args={{type='number',name="Model"}}},createTemporaryVehicle);
+Command("tempveh",{description="létrehoz egy ideiglenes járművet melléd.",required={admin=11},args={{type='number',name="Model"}}},createTemporaryVehicle);
+
+local __ActiveUsageWindowUsers = {};
+function toggleUsageWindow(player)
+    local usageResource = getResourceFromName("rescpu");
+    if (usageResource and getResourceState(usageResource) == "stopped") then 
+        startResource(usageResource);
+    end 
+
+    if (not __ActiveUsageWindowUsers[player]) then 
+        __ActiveUsageWindowUsers[player] = true;
+        triggerClientEvent(player, "rescpu:toggle", root, true);
+        outputChatBox(Core:getServerPrefix('server', 'Admin') .. 'Resource használat ablak megjelenítve.', player);
+    else 
+        __ActiveUsageWindowUsers[player] = nil;
+        triggerClientEvent(player, "rescpu:toggle", root, false);
+        outputChatBox(Core:getServerPrefix('error', 'Admin') .. 'Resource használat ablak eltüntetve.', player);
+    end 
+end 
+Command("usagewindow",{description="megjeleniti a hasznalatablakot.",required={admin=11},args={}},toggleUsageWindow);

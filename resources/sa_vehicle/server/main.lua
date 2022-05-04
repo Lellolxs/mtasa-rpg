@@ -13,9 +13,12 @@ function loadVehicle(___, vehicle) -- SQL querybol visszaadott adatokkal
     end 
 
     local position = fromJSON(vehicle.position);
-    local vehicleElement = createVehicle(vehicle.model, position.x, position.y, position.z);
+    local vehicleElement = createVehicle(getVehicleBaseModelId(vehicle.model), position.x, position.y, position.z);
     setElementInterior(vehicleElement, position.interior);
     setElementDimension(vehicleElement, position.dimension);
+
+    setElementData(vehicleElement, 'model', vehicle.model);
+    setElementData(vehicleElement, 'baseModel', getVehicleBaseModelId(vehicle.model));
 
     setElementData(vehicleElement, 'id', vehicle.id);
     setElementData(vehicleElement, 'owner', vehicle.owner);

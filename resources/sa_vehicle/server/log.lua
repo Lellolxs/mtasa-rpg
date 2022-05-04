@@ -10,7 +10,7 @@ function addVehicleLog(log)
 
     local fields = {
         player = ((type(log.player) == 'userdata') and (getElementData(log.player, 'userId') or nil) or (type(log.player) == 'number' and log.player or nil)),
-        vehicle = ((type(log.vehicle) == 'userdata') and (getElementData(log.vehicle, 'id') or nil) or (type(log.vehicle) == 'number' and log.vehicle or nil)),
+        vehicle = ((type(log.vehicle) == 'userdata') and (getElementData(log.vehicle, 'id') or -1) or (type(log.vehicle) == 'number' and log.vehicle or -1)),
         action = log.action, 
         additional = ((type(log.additional) == 'table') and log.additional or { }),
     };

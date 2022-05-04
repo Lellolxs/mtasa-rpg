@@ -1,0 +1,16 @@
+<meta>
+    
+    <!-- Shared -->
+    <script src="config.lua" type="shared" />
+    
+    <!-- Server -->
+    <script src="server/main.lua" type="server" />
+    
+    <!-- Client -->
+    <script src="client/main.lua" type="client" />
+    
+    <!-- Vehicles -->
+    <file src="client/assets/vehicle/602.txd.gatya" />
+    <file src="client/assets/vehicle/602.dff.gatya" />
+    
+</meta>

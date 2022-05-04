@@ -1,0 +1,284 @@
+<meta>
+    <script src="config.lua" type="shared" />
+    <script src="server/main.lua" type="server" />
+    <script src="client/main.lua" type="client" />
+    
+    <script src="exports/vehicle.lua" type="shared" />
+    
+    <!-- Exportalt cuccok -->
+        <export function="getVehicleRealName" type="shared" />
+    
+    <!-- Kocsimodok -->
+
+        <!-- Factions -->
+
+            <!-- SASD -->
+                <file src="client/assets/vehicles/factions/sasd/policels.dff" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policels.txd" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policelv.dff" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policelv.txd" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policesf.dff" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policesf.txd" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policeranger.dff" download="false" />
+                <file src="client/assets/vehicles/factions/sasd/policeranger.txd" download="false" />
+
+        <!-- Jobs -->
+            <file src="client/assets/vehicles/trashmaster.dff" download="false" />
+            <file src="client/assets/vehicles/trashmaster.txd" download="false" />
+            <file src="client/assets/vehicles/trailer1.dff" download="false" />
+            <file src="client/assets/vehicles/trailer1.txd" download="false" />
+            <file src="client/assets/vehicles/linerunner.dff" download="false" />
+            <file src="client/assets/vehicles/linerunner.txd" download="false" />
+        
+        <!-- Civilian -->
+            <!-- Bikes -->
+                <file src="client/assets/vehicles/civilian/bikes/freeway.dff" download="false" />
+                <file src="client/assets/vehicles/civilian/bikes/freeway.txd" download="false" />
+            <!-- Chevrolet -->
+                <file src="client/assets/vehicles/civilian/chevrolet/yosemite.dff" download="false" />
+                <file src="client/assets/vehicles/civilian/chevrolet/yosemite.txd" download="false" />
+    
+    <!-- Skinek -->
+        <file src="client/assets/skins/kendl.txd" />
+        <file src="client/assets/skins/kendl.dff" />
+    
+    <!-- Objectek -->
+        <!-- General -->
+            <!-- Garazs modellek -->
+                <!-- <file src="client/assets/objects/general/garage/garage_small.col" />
+                <file src="client/assets/objects/general/garage/garage_small.txd" />
+                <file src="client/assets/objects/general/garage/garage_small.dff" />
+                <file src="client/assets/objects/general/garage/garage_large.col" />
+                <file src="client/assets/objects/general/garage/garage_large.txd" />
+                <file src="client/assets/objects/general/garage/garage_large.dff" /> -->
+            
+            <!-- Roadsigns -->
+                <!-- <file src="client/assets/objects/general/roadsigns/speed_bump.col" />
+                <file src="client/assets/objects/general/roadsigns/speed_bump.dff" />
+                <file src="client/assets/objects/general/roadsigns/speed_bump.txd" />
+                
+                <file src="client/assets/objects/general/roadsigns/zebra.col" />
+                <file src="client/assets/objects/general/roadsigns/zebra.dff" />
+                <file src="client/assets/objects/general/roadsigns/zebra.txd" />
+                
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSigns.txd" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign10.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign15.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign17.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign18.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign19.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign20.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign21.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign22.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign23.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign24.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign25.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign26.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign27.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign28.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign29.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign30.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign31.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign32.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign33.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign34.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign35.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign36.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign37.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign38.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign39.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign40.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign41.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign42.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign43.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign44.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign45.dff" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign10.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign15.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign17.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign18.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign19.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign20.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign21.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign22.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign23.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign24.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign25.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign26.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign27.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign28.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign29.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign30.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign31.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign32.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign33.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign34.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign35.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign36.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign37.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign38.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign39.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign40.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign41.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign42.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign43.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign44.col" />
+                <file src="client/assets/objects/general/roadsigns/SAMPRoadSign45.col" /> -->
+
+        <!-- Items -->
+            <!-- All -->
+                <file src='client/assets/objects/items/all/armor.txd' />
+                <file src='client/assets/objects/items/all/armor.dff' />
+                <file src='client/assets/objects/items/all/helmet.col' />
+                <file src='client/assets/objects/items/all/helmet.txd' />
+                <file src='client/assets/objects/items/all/helmet.dff' />
+
+        <!-- Mapfix -->
+            <!-- Los Santos -->
+                <file src="client/assets/objects/mapfix/ls/k.txd" />	
+                <file src="client/assets/objects/mapfix/ls/cuntelungrdj.dff" />
+                <file src="client/assets/objects/mapfix/ls/cehollyhil16.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads01_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads34_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads35_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads36_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads10_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/roads09_law2.dff" />
+                <file src="client/assets/objects/mapfix/ls/cehollyhil10.dff" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn37.dff" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn13.dff" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn34.dff" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn32.dff" />
+                <file src="client/assets/objects/mapfix/ls/road_hilllawn12.dff" />
+                <file src="client/assets/objects/mapfix/ls/freeway10_lan2.dff" />
+                <file src="client/assets/objects/mapfix/ls/freeway3_lan2.dff" />
+                <file src="client/assets/objects/mapfix/ls/freeway6_lan2.dff" />
+                <file src="client/assets/objects/mapfix/ls/freeway7_lan2.dff" />
+                <file src="client/assets/objects/mapfix/ls/freeway1_lan2.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteground25.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteground28.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteground16.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteground07.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteground05.dff" />
+                <file src="client/assets/objects/mapfix/ls/cyecunteground02.dff" />
+                <file src="client/assets/objects/mapfix/ls/cyecunteground28.dff" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst08.dff" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst09.dff" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst06.dff" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst10.dff" />
+                <file src="client/assets/objects/mapfix/ls/ce_groundpalo10.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads25.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunteroads43ramp01.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads43.dff" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads44.dff" />
+                <file src="client/assets/objects/mapfix/ls/cuntelungrdj.col" />
+                <file src="client/assets/objects/mapfix/ls/cehollyhil16.col" />
+                <file src="client/assets/objects/mapfix/ls/roads01_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/roads34_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/roads35_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/roads36_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/roads10_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/roads09_law2.col" />
+                <file src="client/assets/objects/mapfix/ls/cehollyhil10.col" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn37.col" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn13.col" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn34.col" />
+                <file src="client/assets/objects/mapfix/ls/road_lawn32.col" />
+                <file src="client/assets/objects/mapfix/ls/road_hilllawn12.col" />
+                <file src="client/assets/objects/mapfix/ls/freeway10_lan2.col" />
+                <file src="client/assets/objects/mapfix/ls/freeway3_lan2.col" />
+                <file src="client/assets/objects/mapfix/ls/freeway6_lan2.col" />
+                <file src="client/assets/objects/mapfix/ls/freeway7_lan2.col" />
+                <file src="client/assets/objects/mapfix/ls/freeway1_lan2.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteground25.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteground28.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteground16.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteground07.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteground05.col" />
+                <file src="client/assets/objects/mapfix/ls/cyecunteground02.col" />
+                <file src="client/assets/objects/mapfix/ls/cyecunteground28.col" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst08.col" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst09.col" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst06.col" />
+                <file src="client/assets/objects/mapfix/ls/ce_grndpalcst10.col" />
+                <file src="client/assets/objects/mapfix/ls/ce_groundpalo10.col" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads25.col" />
+                <file src="client/assets/objects/mapfix/ls/cunteroads43ramp01.col" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads43.col" />
+                <file src="client/assets/objects/mapfix/ls/cunte_roads44.col" />
+
+            <!-- Las Venturas -->
+                <file src="client/assets/objects/mapfix/lv/k.txd" />
+                <file src="client/assets/objects/mapfix/lv/homokpad.dff" />
+                <file src="client/assets/objects/mapfix/lv/homokpad.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_04.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_04.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_11.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_11.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_16.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_16.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_18.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_18.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_20.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_20.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_22.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_22.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_05.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_05.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_10.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_10.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_15.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_15.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_19.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_19.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_21.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_21.col" />
+                <file src="client/assets/objects/mapfix/lv/vegassedge29.dff" />
+                <file src="client/assets/objects/mapfix/lv/vegassedge29.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_20.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_20.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_18.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_18.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_17.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_17.col" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_16.dff" />
+                <file src="client/assets/objects/mapfix/lv/se_bit_16.col" />	
+                <file src="client/assets/objects/mapfix/lv/ne_bit_19.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_19.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_26.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_26.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_17.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_17.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_15.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_15.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_09.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_09.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_08.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_08.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_19.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_19.col" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_10.dff" />
+                <file src="client/assets/objects/mapfix/lv/ne_bit_10.col" />	
+                <file src="client/assets/objects/mapfix/lv/des_ltraintunnel2.dff" />
+                <file src="client/assets/objects/mapfix/lv/des_ltraintunnel2.col" />
+                <file src="client/assets/objects/mapfix/lv/des_trainline03.dff" />
+                <file src="client/assets/objects/mapfix/lv/des_trainline03.col" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_08.dff" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_08.col" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_09.dff" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_09.col" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_05.dff" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_05.col" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_06.dff" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_06.col" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_14.dff" />
+                <file src="client/assets/objects/mapfix/lv/sw_bit_14.col" />
+                <file src="client/assets/objects/mapfix/lv/land2_sfn10.dff" />
+                <file src="client/assets/objects/mapfix/lv/land2_sfn10.col" />
+                <file src="client/assets/objects/mapfix/lv/land2_sfn09.dff" />
+                <file src="client/assets/objects/mapfix/lv/land2_sfn09.col" />
+                <file src="client/assets/objects/mapfix/lv/hway_sfn02.dff" />
+                <file src="client/assets/objects/mapfix/lv/hway_sfn02.col" />
+                <file src="client/assets/objects/mapfix/lv/sfn_crashbar02.dff" />
+                <file src="client/assets/objects/mapfix/lv/sfn_crashbar02.col" />
+</meta>

@@ -1,0 +1,297 @@
+config = {};
+
+config.baseSkin = 10; -- Ha olyan skin van rajta, ami csak adott frakcióknak engedélyezett.
+
+config.print_details = true;
+config.print_loaded_collections = true;
+config.print_errors = true;
+
+config.mods = {
+    vehicles = {
+        -- [463] = { fileName = 'freeway', realName = 'Freeway', loaded = true, loadByDefault = 'enabled' | 'disabled' | 'notcached', component = 'wheel_type' },
+        
+        -- Factions
+            -- SASD
+                [596] = { fileName = "policels", category = "factions/sasd", realName = "Ford Crown Victoria (Sheriff)", loaded = true, default_state = 'enabled' },
+                [597] = { fileName = "policesf", category = "factions/sasd", realName = "Dodge Charger RT (Sheriff)", loaded = true, default_state = 'enabled' },
+                [598] = { fileName = "policelv", category = "factions/sasd", realName = "Dodge Charger RT (Sheriff)", loaded = true, default_state = 'enabled' },
+                [599] = { fileName = "policeranger", category = "factions/sasd", realName = "Police Ranger (Sheriff)", loaded = true, default_state = 'enabled' },
+
+        -- Jobs
+            -- Trashmaster
+                [408] = { fileName = 'trashmaster', realName = 'Kukásautó', loaded = true, default_state = 'enabled' },
+
+            -- Trucker
+                [403] = { fileName = 'linerunner', realName = 'Kamion', loaded = true, default_state = 'enabled' },
+                [435] = { fileName = 'trailer1', realName = 'Szerelvény', loaded = true, default_state = 'enabled' },
+
+        -- Civilian
+            -- Bikes
+                [124124] = { fileName = 'freeway', category = "civilian/bikes", realName = 'Harley-Davidson FXSTS Springer Softail', loaded = true, default_state = 'enabled' },
+            -- SUVs
+                [554] = { fileName = 'yosemite', category = "civilian/chevrolet", realName = 'Chevrolet Silverado', loaded = true, default_state = 'enabled' },
+    },
+
+    skins = { 
+        --[[
+            file = Fájlnév
+            id = skinid, amivel cseréli
+            restricted = Azok a frakciók akik használhatják.
+        ]]--
+
+        -- { file = 'wmoice', id = 264, restricted = {} },
+        { file = 'kendl', id = 304, restricted = {} },
+    },
+
+    objects = {
+        -- { 
+        --     name = 'Garage models', -- Neve, hogy tudjuk mi a faszom az
+        --     category = 'general', -- Kategoriaja
+        --     folder = 'garage', -- A mappa, amiben vannak a cuccok ( Simán "/"-nél a "client/assets/objects"-re fog mutatni, de inkább rakjunk mindent külön.)
+        --     -- resource = 'garage_map', -- Ha van resource megadva a táblába, akkor megpróbálja betölteni a hozzá lévő mappolást ha van.
+        --     files = { -- Fájlok
+        --         { fileName = 'garage_small', id = 8663, --[[noTXD = true, noCOL = true]] }, --Gondolom nem kell megmagyaráznom.
+        --         { fileName = 'garage_large', id = 3986 },
+        --     },
+        -- },
+
+        -- {
+        --     name = 'Roadsign models', 
+        --     category = 'general', 
+        --     folder = 'roadsigns', 
+        --     files = {
+        --         { fileName = "zebra", id = 8415, allow_transparency = true },
+        --         { fileName = "speed_bump", id = 8416, allow_transparency = true },
+
+        --         { fileName = "SAMPRoadSign17", id = 3521, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign18", id = 4855, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign19", id = 6118, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign20", id = 17511, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign21", id = 8051, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign22", id = 7548, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign24", id = 7955, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign25", id = 8343, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign26", id = 8246, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign27", id = 7889, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign28", id = 7434, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign29", id = 7997, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign30", id = 6035, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign31", id = 8045, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign32", id = 8039, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign33", id = 8245, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign34", id = 8422, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign35", id = 7584, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign10", id = 8392, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign37", id = 7417, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign15", id = 7539, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign39", id = 7880, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign40", id = 7426, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign41", id = 7554, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign42", id = 7540, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign43", id = 14625, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign44", id = 8664, texture = "SAMPRoadSigns" },
+        --         { fileName = "SAMPRoadSign45", id = 8616, texture = "SAMPRoadSigns" },
+        --     },
+        -- },
+
+        {
+            name = 'General mappings', 
+            category = 'general', 
+            folder = 'unknown', 
+            resource = {  }
+        },
+
+        --[[                            ]]--
+        --[[           Items            ]]--
+        --[[                            ]]--
+
+        {
+            name = "Itemek", 
+            category = "items", 
+            folder = "all", 
+            files = {
+                { fileName = 'armor', id = 9593, noCOL = true },
+                { fileName = 'helmet', id = 9083 },
+            },
+        },
+
+        --[[                            ]]--
+        --[[           Mapfix           ]]--
+        --[[                            ]]--
+        {
+            name = 'Los Santos mapfix', 
+            category = 'mapfix', 
+            folder = 'ls', 
+            files = {
+                { fileName = 'cuntelungrdj', id = 13675, texture = 'k' },
+                { fileName = 'cuntelungrdj', id = 13852, texture = 'k' },
+                { fileName = 'cehollyhil16', id = 13017, texture = 'k' },
+                { fileName = 'cehollyhil16', id = 13446, texture = 'k' },
+                { fileName = 'roads01_law2', id = 6325, texture = 'k' },
+                { fileName = 'roads01_law2', id = 6414, texture = 'k' },
+                { fileName = 'roads34_law2', id = 6326, texture = 'k' },
+                { fileName = 'roads34_law2', id = 6361, texture = 'k' },
+                { fileName = 'roads35_law2', id = 6327, texture = 'k' },
+                { fileName = 'roads35_law2', id = 6360, texture = 'k' },
+                { fileName = 'roads36_law2', id = 6509, texture = 'k' },
+                { fileName = 'roads36_law2', id = 6510, texture = 'k' },
+                { fileName = 'roads10_law2', id = 6508, texture = 'k' },
+                { fileName = 'roads10_law2', id = 6511, texture = 'k' },
+                { fileName = 'roads09_law2', id = 6507, texture = 'k' },
+                { fileName = 'roads09_law2', id = 6512, texture = 'k' },
+                { fileName = 'cehollyhil10', id = 13698, texture = 'k' },
+                { fileName = 'cehollyhil10', id = 13763, texture = 'k' },
+                { fileName = 'road_lawn37', id = 5753, texture = 'k' },
+                { fileName = 'road_lawn37', id = 5834, texture = 'k' },
+                { fileName = 'road_lawn13', id = 5752, texture = 'k' },
+                { fileName = 'road_lawn13', id = 5833, texture = 'k' },
+                { fileName = 'road_lawn34', id = 5802, texture = 'k' },
+                { fileName = 'road_lawn34', id = 5832, texture = 'k' },
+                { fileName = 'road_lawn32', id = 5744, texture = 'k' },
+                { fileName = 'road_lawn32', id = 5826, texture = 'k' },
+                { fileName = 'road_hilllawn12', id = 5803, texture = 'k' },
+                { fileName = 'road_hilllawn12', id = 5824, texture = 'k' },
+                { fileName = 'freeway10_lan2', id = 4694, texture = 'k' },
+                { fileName = 'freeway10_lan2', id = 4693, texture = 'k' },
+                { fileName = 'freeway3_lan2', id = 4660, texture = 'k' },
+                { fileName = 'freeway3_lan2', id = 4661, texture = 'k' },
+                { fileName = 'freeway6_lan2', id = 4666, texture = 'k' },
+                { fileName = 'freeway6_lan2', id = 4667, texture = 'k' },
+                { fileName = 'freeway7_lan2', id = 4653, texture = 'k' },
+                { fileName = 'freeway7_lan2', id = 4655, texture = 'k' },
+                { fileName = 'freeway1_lan2', id = 4656, texture = 'k' },
+                { fileName = 'freeway1_lan2', id = 4657, texture = 'k' },
+                { fileName = 'cunteground25', id = 13825, texture = 'k' },
+                { fileName = 'cunteground25', id = 13829, texture = 'k' },
+                { fileName = 'cunteground28', id = 13826, texture = 'k' },
+                { fileName = 'cunteground28', id = 13830, texture = 'k' },
+                { fileName = 'cunteground16', id = 13820, texture = 'k' },
+                { fileName = 'cunteground16', id = 13822, texture = 'k' },
+                { fileName = 'cunteground07', id = 13146, texture = 'k' },
+                { fileName = 'cunteground07', id = 13434, texture = 'k' },
+                { fileName = 'cunteground05', id = 13145, texture = 'k' },
+                { fileName = 'cunteground05', id = 13431, texture = 'k' },
+                { fileName = 'cyecunteground02', id = 13136, texture = 'k' },
+                { fileName = 'cyecunteground02', id = 13405, texture = 'k' },
+                { fileName = 'cyecunteground28', id = 12869, texture = 'k' },
+                { fileName = 'cyecunteground28', id = 13406, texture = 'k' },
+                { fileName = 'ce_grndpalcst08', id = 13124, texture = 'k' },
+                { fileName = 'ce_grndpalcst08', id = 13408, texture = 'k' },
+                { fileName = 'ce_grndpalcst09', id = 13125, texture = 'k' },
+                { fileName = 'ce_grndpalcst09', id = 13411, texture = 'k' },
+                { fileName = 'ce_grndpalcst06', id = 12870, texture = 'k' },
+                { fileName = 'ce_grndpalcst06', id = 13409, texture = 'k' },
+                { fileName = 'ce_grndpalcst10', id = 13126, texture = 'k' },
+                { fileName = 'ce_grndpalcst10', id = 13130, texture = 'k' },
+                { fileName = 'ce_groundpalo10', id = 13107, texture = 'k' },
+                { fileName = 'ce_groundpalo10', id = 13115, texture = 'k' },
+                { fileName = 'cunte_roads25', id = 12828, texture = 'k' },
+                { fileName = 'cunte_roads25', id = 13273, texture = 'k' },
+                { fileName = 'cunteroads43ramp01', id = 12975, texture = 'k' },
+                { fileName = 'cunteroads43ramp01', id = 13318, texture = 'k' },
+
+                { fileName = 'cunte_roads43', id = 12880, texture = 'k' },
+                { fileName = 'cunte_roads43', id = 13162, texture = 'k' },
+                { fileName = 'cunte_roads44', id = 12881, texture = 'k' },
+                { fileName = 'cunte_roads44', id = 13117, texture = 'k' },
+                { fileName = 'cunte_roads29', id = 12851, texture = 'k' },
+                { fileName = 'cunte_roads29', id = 13234, texture = 'k' },
+                { fileName = 'cunte_roads30', id = 12852, texture = 'k' },
+                { fileName = 'cunte_roads30', id = 13233, texture = 'k' },
+                { fileName = 'cunte_roads35', id = 12875, texture = 'k' },
+                { fileName = 'cunte_roads35', id = 13376, texture = 'k' },
+                { fileName = 'ce_ground03', id = 13040, texture = 'k' },
+                { fileName = 'ce_ground03', id = 13418, texture = 'k' },
+                { fileName = 'ce_groundpalo02', id = 13100, texture = 'k' },
+                { fileName = 'ce_groundpalo02', id = 13111, texture = 'k' },
+                { fileName = 'cunte_roads23', id = 12826, texture = 'k' },
+                { fileName = 'cunte_roads23', id = 13352, texture = 'k' },
+                { fileName = 'cegroundt202', id = 12866, texture = 'k' },
+                { fileName = 'cegroundt202', id = 13474, texture = 'k' },
+                { fileName = 'cegroundt205', id = 13084, texture = 'k' },
+                { fileName = 'cegroundt205', id = 13475, texture = 'k' },
+                { fileName = 'ce_groundpalo06', id = 13099, texture = 'k' },
+                { fileName = 'ce_groundpalo06', id = 13110, texture = 'k' },
+                { fileName = 'cunte_roads26', id = 12829, texture = 'k' },
+                { fileName = 'cunte_roads26', id = 13350, texture = 'k' },
+            },
+        },
+        
+        {
+            name = 'Las Venturas mapfix', 
+            category = 'mapfix', 
+            folder = 'lv', 
+            files = {
+                { fileName = 'homokpad', id = 6235, texture = 'k' },
+                { fileName = 'ne_bit_04', id = 16175, texture = 'k' },
+                { fileName = 'ne_bit_04', id = 16507, texture = 'k' },
+                { fileName = 'ne_bit_11', id = 16181, texture = 'k' },
+                { fileName = 'ne_bit_11', id = 16497, texture = 'k' },
+                { fileName = 'ne_bit_16', id = 16186, texture = 'k' },
+                { fileName = 'ne_bit_16', id = 16471, texture = 'k' },
+                { fileName = 'ne_bit_18', id = 16188, texture = 'k' },
+                { fileName = 'ne_bit_18', id = 16473, texture = 'k' },
+                { fileName = 'ne_bit_20', id = 16190, texture = 'k' },
+                { fileName = 'ne_bit_20', id = 16551, texture = 'k' },
+                { fileName = 'ne_bit_22', id = 16103, texture = 'k' },
+                { fileName = 'ne_bit_22', id = 16553, texture = 'k' },
+                { fileName = 'se_bit_05', id = 16234, texture = 'k' },
+                { fileName = 'se_bit_05', id = 16556, texture = 'k' },
+                { fileName = 'se_bit_10', id = 16239, texture = 'k' },
+                { fileName = 'se_bit_10', id = 16550, texture = 'k' },
+                { fileName = 'se_bit_15', id = 16244, texture = 'k' },
+                { fileName = 'se_bit_15', id = 16549, texture = 'k' },
+                { fileName = 'se_bit_19', id = 16593, texture = 'k' },
+                { fileName = 'se_bit_19', id = 16548, texture = 'k' },
+                { fileName = 'se_bit_21', id = 16249, texture = 'k' },
+                { fileName = 'se_bit_21', id = 16496, texture = 'k' },
+                { fileName = 'vegassedge29', id = 8212, texture = 'k' },
+                { fileName = 'vegassedge29', id = 8220, texture = 'k' },
+                { fileName = 'se_bit_20', id = 16248, texture = 'k' },
+                { fileName = 'se_bit_20', id = 16495, texture = 'k' },
+                { fileName = 'se_bit_18', id = 16247, texture = 'k' },
+                { fileName = 'se_bit_18', id = 16494, texture = 'k' },
+                { fileName = 'se_bit_17', id = 16246, texture = 'k' },
+                { fileName = 'se_bit_17', id = 16493, texture = 'k' },
+                { fileName = 'se_bit_16', id = 16245, texture = 'k' },
+                { fileName = 'se_bit_16', id = 16488, texture = 'k' },
+                { fileName = 'ne_bit_26', id = 16257, texture = 'k' },
+                { fileName = 'ne_bit_26', id = 16552, texture = 'k' },
+                { fileName = 'ne_bit_17', id = 16187, texture = 'k' },
+                { fileName = 'ne_bit_17', id = 16472, texture = 'k' },
+                { fileName = 'ne_bit_15', id = 16185, texture = 'k' },
+                { fileName = 'ne_bit_15', id = 16470, texture = 'k' },
+                { fileName = 'ne_bit_09', id = 16179, texture = 'k' },
+                { fileName = 'ne_bit_09', id = 16468, texture = 'k' },
+                { fileName = 'ne_bit_08', id = 16178, texture = 'k' },
+                { fileName = 'ne_bit_08', id = 16464, texture = 'k' },
+                { fileName = 'ne_bit_19', id = 16189, texture = 'k' },
+                { fileName = 'ne_bit_19', id = 16474, texture = 'k' },
+                { fileName = 'ne_bit_10', id = 16180, texture = 'k' },
+                { fileName = 'ne_bit_10', id = 16469, texture = 'k' },
+                { fileName = 'des_ltraintunnel2', id = 16024, texture = 'k' },
+                { fileName = 'des_ltraintunnel2', id = 16517, texture = 'k' },
+
+                { fileName = 'des_trainline03', id = 11465, texture = 'k' },
+                { fileName = 'des_trainline03', id = 11620, texture = 'k' },
+                { fileName = 'sw_bit_08', id = 11536, texture = 'k' },
+                { fileName = 'sw_bit_08', id = 11661, texture = 'k' },
+                { fileName = 'sw_bit_09', id = 11557, texture = 'k' },
+                { fileName = 'sw_bit_09', id = 11653, texture = 'k' },
+                { fileName = 'sw_bit_05', id = 11534, texture = 'k' },
+                { fileName = 'sw_bit_05', id = 11660, texture = 'k' },
+                { fileName = 'sw_bit_06', id = 11535, texture = 'k' },
+                { fileName = 'sw_bit_06', id = 11659, texture = 'k' },
+                { fileName = 'sw_bit_14', id = 11542, texture = 'k' },
+                { fileName = 'sw_bit_14', id = 11656, texture = 'k' },
+                { fileName = 'land2_sfn10', id = 9206, texture = 'k' },
+                { fileName = 'land2_sfn10', id = 9467, texture = 'k' },
+                { fileName = 'land2_sfn09', id = 9211, texture = 'k' },
+                { fileName = 'land2_sfn09', id = 9466, texture = 'k' },
+                { fileName = 'hway_sfn02', id = 9476, texture = 'k' },
+                { fileName = 'hway_sfn02', id = 9263, texture = 'k' },
+                { fileName = 'sfn_crashbar02', id = 9294, texture = 'k' },
+            },
+        },
+    },
+};

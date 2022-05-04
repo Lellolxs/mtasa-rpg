@@ -26,8 +26,8 @@ function toggleVehicleEngine(player, _, _, vehicle)
     addVehicleLog({ player = player, vehicle = vehicle, action = "TOGGLE_ENGINE", additional = { state = not state } });
 end 
 
+local __LastVehicleLockChanges = {};
 function toggleVehicleLock(player)
-    iprint('fasz?');
     local vehicle = getPedOccupiedVehicle(player);
     if (not vehicle) then 
         vehicle = Core:findNearestVehicleToElement(player, 10);
@@ -37,15 +37,45 @@ function toggleVehicleLock(player)
         end 
     end 
 
+    if (
+        __LastVehicleLockChanges[vehicle] and 
+        __LastVehicleLockChanges[vehicle] + 3500 > getTickCount()
+    ) then 
+        return;
+    end 
+
+    __LastVehicleLockChanges[vehicle] = getTickCount();
+
     if (not playerHasAccessToVehicle(player, vehicle)) then 
         return outputChatBox('bocs tesi de nem', player);
     end
+
+    local originalLightState = {};
+    for i = 0, 3 do originalLightState[i] = getVehicleLightState(vehicle, i); end 
+    setVehicleOverrideLights(vehicle, 2);
+    setTimer(setVehicleOverrideLights, 250, 1, vehicle, 0);
+    setTimer(setVehicleOverrideLights, 500, 1, vehicle, 2);
+    setTimer(setVehicleOverrideLights, 750, 1, vehicle, 0);
+    for i = 0, 3 do getVehicleLightState(vehicle, originalLightState[i]); end 
+    originalLightState = nil;
 
     local state = isVehicleLocked(vehicle);
     setVehicleLocked(vehicle, not isVehicleLocked(vehicle));
     Chat:elementSendMe(player, (state and "kinyitja" or "bezárja") .. " egy jármű ajtaját.");
     addVehicleLog({ player = player, vehicle = vehicle, action = "TOGGLE_LOCK", additional = { state = not state } });
+
+    collectgarbage();
 end 
+
+setTimer(function() 
+    local now = getTickCount(); 
+
+    for vehicle, tick in pairs(__LastVehicleLockChanges) do 
+        if (tick + 60000 < now) then 
+            __LastVehicleLockChanges[vehicle] = nil;
+        end 
+    end
+end, 60000 * 5, 0);
 
 addEventHandler('onVehicleStartEnter', root, function(player, seat)
     if (not pendingVehicleEnters[source] and seat == 0) then 
@@ -68,7 +98,7 @@ addEventHandler('onVehicleStartExit', root, function(player, seat)
     end 
 end);
 
-addEventHandler('onPlayerVehicleEnter', root, function(vehicle, seat)
+addEventHandler('onPlayerVehicleEnter', root, function(vehicle, seat, jacker)
     if (seat == 0) then 
         bindKey(source, 'l', 'down', toggleVehicleLights, vehicle);
         bindKey(source, 'j', 'down', toggleVehicleEngine, vehicle);
@@ -78,6 +108,23 @@ addEventHandler('onPlayerVehicleEnter', root, function(vehicle, seat)
             pendingVehicleEnters[vehicle] = nil;
         end 
     end 
+
+    addVehicleLog({ 
+        player = source, 
+        vehicle = vehicle, 
+        action = "VEHICLE_ENTER", 
+        additional = { 
+            seat = seat, 
+            jackedBy = jacker, 
+            position = { 
+                coord = { 
+                    pos = { getElementPosition(vehicle) }, 
+                    int = getElementInterior(vehicle), 
+                    dim = getElementDimension(vehicle) 
+                } 
+            },
+        }
+    });
 end);
 
 addEventHandler('onPlayerVehicleExit', root, function(vehicle, seat, jacker, forcedByScript)
@@ -86,7 +133,23 @@ addEventHandler('onPlayerVehicleExit', root, function(vehicle, seat, jacker, for
         unbindKey(source, 'j', 'down', toggleVehicleEngine);
     end
 
-    addVehicleLog({ player = player, vehicle = vehicle, action = "VEHICLE_EXIT", additional = { seat = seat, jackedBy = jacker, forcedByScript = forcedByScript } });
+    addVehicleLog({ 
+        player = source, 
+        vehicle = vehicle, 
+        action = "VEHICLE_EXIT", 
+        additional = { 
+            seat = seat, 
+            jackedBy = jacker, 
+            forcedByScript = forcedByScript, 
+            position = { 
+                coord = { 
+                    pos = { getElementPosition(vehicle) }, 
+                    int = getElementInterior(vehicle), 
+                    dim = getElementDimension(vehicle) 
+                } 
+            },
+        }
+    });
 end);
 
 addEventHandler('onResourceStart', resourceRoot, function()

@@ -3,10 +3,10 @@ local timeout = 50; -- dbPoll
 local tried = 0;
 local maxTryCount = 5;
 local connectionInfo = {
-    host = 'argon.szkiddaj.pw', 
-    username = 'u18_ehz2t4dQ2z',
-    password = '82!mNsEqzYD3aHd9g!Wx+=CO',
-    database = 's18_core',
+    host = 'sodium.szkiddaj.pw', 
+    username = 'mtarpg',
+    password = 'gGQWQWM49NlBmuZz',
+    database = 'mtarpg',
 };
 
 function main(resource) 
@@ -15,11 +15,14 @@ function main(resource)
         if (maxTryCount > tried) then 
             print('Sikertelen adatbázis csatlakozás! Újrapróbálkozás ' .. timeout / 1000 .. ' másodpercen belül.');
             tried = tried + 1;
-            setTimer(main, timeout, 1, getThisResource());
+            setTimer(main, timeout, 2000, getThisResource());
         else 
             print('Sikertelen adatbázis kapcsolat. Core leállítása.');
             stopResource(getThisResource());
         end
+    else 
+        print("Sikeres adatbazis kapcsolodas.")
+        triggerEvent("onDatabaseConnection", root, connection);
     end 
 end
 addEventHandler('onResourceStart', resourceRoot, main);
@@ -31,3 +34,5 @@ end
 function getDatabase()
     return connection;
 end
+
+addEvent("onDatabaseConnection", false);

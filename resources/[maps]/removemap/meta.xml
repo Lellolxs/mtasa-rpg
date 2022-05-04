@@ -1,0 +1,4 @@
+<meta>
+    <script src='client/list.lua' type='client' />
+    <script src='client/main.lua' type='client' />
+</meta>

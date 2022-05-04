@@ -1,10 +1,17 @@
 <meta>
     <min_mta_version client="1.3.0-9.04431" />
 
+    <script src='import.lua' type='shared' />
+
     <!-- Shared -->
         <script src='shared/plate.lua' type='shared' />
+        <script src='shared/vehicles.lua' type='shared' />
 
         <!-- Exports -->
+            <export function="getVehicleList" type="shared" />
+            <export function="getVehicleBaseModelId" type="shared" />
+            <export function="getVehicleAttributes" type="shared" />
+            <export function="getVehicleAttribute" type="shared" />
             <export function="generateLicensePlate" type="shared" />
 
     <!-- Server -->

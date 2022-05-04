@@ -14,9 +14,9 @@ end
 Command("adminhelp", { description = "Na vajon mi? :O", required = { admin = 1 }, args = { }, alias = { "ah" } }, showCommands);
 
 function toggleAdminDuty(player)
-    local admin = getElementData(player, 'admin') or {};
+    local admin = (getElementData(player, "admin") or {});
 
-    if (not admin.duty) then 
+    if (not isAdminInDuty(player)) then 
         admin.duty = true;
         setElementData(player, 'admin', admin);
 
@@ -104,17 +104,17 @@ function getAdminStats(player, accountId, hours)
         Database, 
         string.format([[
             SELECT
-                logs__admin.admin_id, logs__admin.action, 
+                logs__admin.admin, logs__admin.action, 
                 users.id, users.username, COUNT(*) AS count
             FROM 
                 logs__admin
             LEFT JOIN
                 users
             ON 
-            users.id = logs__admin.admin_id
+            users.id = logs__admin.admin
             WHERE 
                 logs__admin.action IN ('%s') AND
-                logs__admin.admin_id = ? AND
+                logs__admin.admin = ? AND
                 logs__admin.date > DATE_SUB(NOW(), INTERVAL ? HOUR)
             GROUP BY logs__admin.action
         ]], table.concat(AdminStatFields, "', '")),

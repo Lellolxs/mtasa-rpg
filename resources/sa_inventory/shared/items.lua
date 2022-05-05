@@ -37,7 +37,7 @@ Items = {
         type = 'consumable', 
         weight = 0.5, 
 
-        flags = { "STACKABLE", "TAKE_ONE_ON_USE" },
+        flags = { "TAKE_ONE_ON_USE" },
     },
 
     -- 
@@ -77,6 +77,20 @@ Items = {
         weaponId = 30,
 
         flags = { "CAN_RENAME", "TAKE_ON_DEATH" },
+
+        attributes = {
+            {
+                id = "sticker", 
+                label = "Matrica", 
+                description = "Matrica a fegyveredre lol",
+                valueType = "number", 
+                initialValue = nil, 
+
+                validator = function(value)
+                    return exports.valamiszarstickerrendszer:isStickerValid(value);
+                end
+            }, 
+        },
 
         methods = {
             getDescription = function(item)

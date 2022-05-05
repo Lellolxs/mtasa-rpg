@@ -42,6 +42,8 @@
         <script src='client/inventory.lua' type='client' />
         <script src='client/actionbar.lua' type='client' />
 
+        <script src='client/admin/giveitem.lua' type='client' />
+
         <!-- Assets -->
             <file src='client/assets/items/nil.png' />
             <file src='client/assets/items/water.png' />

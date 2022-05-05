@@ -1,6 +1,6 @@
 Core = exports.sa_core;
 Admin = exports.sa_admin;
---Inventory = exports.avInventory;
+Inventory = exports.avInventory;
 
 Database = Core:getDatabase();
 
@@ -18,15 +18,15 @@ function respawnPlayer(player, revivedByAdmin)
     end 
 
     if (not revivedByAdmin) then 
-        -- local inventory = getElementData(player, 'inventory');
-        -- local items = Inventory:getElementItemsWithFlag(player, "TAKE_ON_DEATH");
-        -- if (items) then 
-        --     for slot, item in pairs(items) do 
-        --         inventory[slot] = nil;
-        --     end 
-        -- end 
+        local inventory = getElementData(player, 'inventory');
+        local items = Inventory:getElementItemsWithFlag(player, "TAKE_ON_DEATH");
+        if (items) then 
+            for slot, item in pairs(items) do 
+                inventory[slot] = nil;
+            end 
+        end 
 
-        -- setElementData(player, 'inventory', inventory);
+        setElementData(player, 'inventory', inventory);
 
         local spawn = SpawnPoints[math.random(1, #SpawnPoints)];
         local skin = getElementModel(player);

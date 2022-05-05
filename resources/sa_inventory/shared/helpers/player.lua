@@ -72,6 +72,18 @@ function isElementHasItem(element, id, data)
     return false;
 end
 
+function getElementFreeSlotsCount(element)
+    local count = 0;
+
+    for slot = 0, 31 do 
+        if (inventory[slot] == nil) then 
+            count = count + 1;
+        end 
+    end 
+
+    return count;
+end 
+
 function getElementEmptyItemSlot(element)
     if (not isElement(element)) then 
         return false;

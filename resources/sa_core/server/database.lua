@@ -3,10 +3,10 @@ local timeout = 50; -- dbPoll
 local tried = 0;
 local maxTryCount = 5;
 local connectionInfo = {
-    host = 'sodium.szkiddaj.pw', 
-    username = 'mtarpg',
-    password = 'gGQWQWM49NlBmuZz',
-    database = 'mtarpg',
+    host = '?', 
+    username = '?',
+    password = '?',
+    database = '?',
 };
 
 function main(resource) 

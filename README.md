@@ -1,3 +1,8 @@
+#mtasa-rpg
+
+elkezdett uj avrp mod amibol nem lett semmi, nem meglepo modonxdd a hasznalatahoz glhf, mivel szinte biztos vagyok benne hogy semmilyen meglevo modhoz nem fogod tudni hozzaganyolni. 
+
+
 ## How-to-felrakni ha retardalt vagy
 
 ```bash
